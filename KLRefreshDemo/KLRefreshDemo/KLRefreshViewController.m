@@ -27,16 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    testTableView = [[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+    testTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [testTableView setDelegate:self];
     [testTableView setDataSource:self];
     [self.view addSubview:testTableView];
     
-    
-    refresh = [KLRefresh refreshWithScrollView:testTableView];
-    [refresh setIsEnableHeader:YES];
-    [refresh setIsEnableFooter:YES];
-    [refresh setDelegate:self];
+
+    refresh = [KLRefresh refreshWithScrollView:testTableView];      // init Refresh and set scrollview
+    [refresh setIsEnableHeader:YES];        //enable header
+    [refresh setIsEnableFooter:YES];        //enable footer
+    [refresh setDelegate:self];     //delegate
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,17 +45,22 @@
 }
 
 #pragma mark- RefreshDelegate
+// Header
 - (void)refreshWillRefreshFromHeader
 {
+//    refresh... and ReloadData View
+//    if data update Complete , you need call [<$KLRefresh Instance$> endRefresh];
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [self endRef];
     });
 }
-
+//Footer
 - (void)refreshWillRefreshFromFooter
 {
+//    add Data... and ReloadData View
+//    if data update Complete , you need call [<$KLRefresh Instance$> endRefresh];
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
