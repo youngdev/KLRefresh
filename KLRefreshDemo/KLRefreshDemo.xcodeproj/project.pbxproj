@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BAC4BF2188CD06400F126B6 /* KLRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC4BED188CD06400F126B6 /* KLRefresh.m */; };
+		8BAC4BF3188CD06400F126B6 /* KLRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC4BEF188CD06400F126B6 /* KLRefreshFooter.m */; };
+		8BAC4BF4188CD06400F126B6 /* KLRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC4BF1188CD06400F126B6 /* KLRefreshHeader.m */; };
 		8BC53E1A188930C80036452F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC53E19188930C80036452F /* Foundation.framework */; };
 		8BC53E1C188930C80036452F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC53E1B188930C80036452F /* CoreGraphics.framework */; };
 		8BC53E1E188930C80036452F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC53E1D188930C80036452F /* UIKit.framework */; };
@@ -19,9 +22,6 @@
 		8BC53E35188930C80036452F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC53E1D188930C80036452F /* UIKit.framework */; };
 		8BC53E3D188930C80036452F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BC53E3B188930C80036452F /* InfoPlist.strings */; };
 		8BC53E3F188930C80036452F /* KLRefreshDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53E3E188930C80036452F /* KLRefreshDemoTests.m */; };
-		8BC53E51188930E00036452F /* KLRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53E4A188930E00036452F /* KLRefresh.m */; };
-		8BC53E52188930E00036452F /* KLRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53E4C188930E00036452F /* KLRefreshFooter.m */; };
-		8BC53E53188930E00036452F /* KLRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53E4E188930E00036452F /* KLRefreshHeader.m */; };
 		8BC53E54188930E00036452F /* KLRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC53E50188930E00036452F /* KLRefreshViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8BAC4BEC188CD06400F126B6 /* KLRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefresh.h; sourceTree = "<group>"; };
+		8BAC4BED188CD06400F126B6 /* KLRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefresh.m; sourceTree = "<group>"; };
+		8BAC4BEE188CD06400F126B6 /* KLRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefreshFooter.h; sourceTree = "<group>"; };
+		8BAC4BEF188CD06400F126B6 /* KLRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefreshFooter.m; sourceTree = "<group>"; };
+		8BAC4BF0188CD06400F126B6 /* KLRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefreshHeader.h; sourceTree = "<group>"; };
+		8BAC4BF1188CD06400F126B6 /* KLRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefreshHeader.m; sourceTree = "<group>"; };
 		8BC53E16188930C80036452F /* KLRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KLRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC53E19188930C80036452F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8BC53E1B188930C80036452F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -52,12 +58,6 @@
 		8BC53E3A188930C80036452F /* KLRefreshDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KLRefreshDemoTests-Info.plist"; sourceTree = "<group>"; };
 		8BC53E3C188930C80036452F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8BC53E3E188930C80036452F /* KLRefreshDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLRefreshDemoTests.m; sourceTree = "<group>"; };
-		8BC53E49188930E00036452F /* KLRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefresh.h; sourceTree = "<group>"; };
-		8BC53E4A188930E00036452F /* KLRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefresh.m; sourceTree = "<group>"; };
-		8BC53E4B188930E00036452F /* KLRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefreshFooter.h; sourceTree = "<group>"; };
-		8BC53E4C188930E00036452F /* KLRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefreshFooter.m; sourceTree = "<group>"; };
-		8BC53E4D188930E00036452F /* KLRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefreshHeader.h; sourceTree = "<group>"; };
-		8BC53E4E188930E00036452F /* KLRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefreshHeader.m; sourceTree = "<group>"; };
 		8BC53E4F188930E00036452F /* KLRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefreshViewController.h; sourceTree = "<group>"; };
 		8BC53E50188930E00036452F /* KLRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefreshViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +86,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8BAC4BEB188CD06400F126B6 /* KLRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				8BAC4BEC188CD06400F126B6 /* KLRefresh.h */,
+				8BAC4BED188CD06400F126B6 /* KLRefresh.m */,
+				8BAC4BEE188CD06400F126B6 /* KLRefreshFooter.h */,
+				8BAC4BEF188CD06400F126B6 /* KLRefreshFooter.m */,
+				8BAC4BF0188CD06400F126B6 /* KLRefreshHeader.h */,
+				8BAC4BF1188CD06400F126B6 /* KLRefreshHeader.m */,
+			);
+			name = KLRefresh;
+			path = ../../KLRefresh;
+			sourceTree = "<group>";
+		};
 		8BC53E0D188930C80036452F = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +133,7 @@
 		8BC53E1F188930C80036452F /* KLRefreshDemo */ = {
 			isa = PBXGroup;
 			children = (
-				8BC53E48188930E00036452F /* KLRefresh */,
+				8BAC4BEB188CD06400F126B6 /* KLRefresh */,
 				8BC53E4F188930E00036452F /* KLRefreshViewController.h */,
 				8BC53E50188930E00036452F /* KLRefreshViewController.m */,
 				8BC53E28188930C80036452F /* KLAppDelegate.h */,
@@ -157,19 +171,6 @@
 				8BC53E3B188930C80036452F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8BC53E48188930E00036452F /* KLRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				8BC53E49188930E00036452F /* KLRefresh.h */,
-				8BC53E4A188930E00036452F /* KLRefresh.m */,
-				8BC53E4B188930E00036452F /* KLRefreshFooter.h */,
-				8BC53E4C188930E00036452F /* KLRefreshFooter.m */,
-				8BC53E4D188930E00036452F /* KLRefreshHeader.h */,
-				8BC53E4E188930E00036452F /* KLRefreshHeader.m */,
-			);
-			path = KLRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BC53E51188930E00036452F /* KLRefresh.m in Sources */,
-				8BC53E53188930E00036452F /* KLRefreshHeader.m in Sources */,
-				8BC53E52188930E00036452F /* KLRefreshFooter.m in Sources */,
+				8BAC4BF3188CD06400F126B6 /* KLRefreshFooter.m in Sources */,
+				8BAC4BF4188CD06400F126B6 /* KLRefreshHeader.m in Sources */,
+				8BAC4BF2188CD06400F126B6 /* KLRefresh.m in Sources */,
 				8BC53E54188930E00036452F /* KLRefreshViewController.m in Sources */,
 				8BC53E26188930C80036452F /* main.m in Sources */,
 				8BC53E2A188930C80036452F /* KLAppDelegate.m in Sources */,
@@ -476,6 +477,7 @@
 				8BC53E44188930C80036452F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BC53E45188930C80036452F /* Build configuration list for PBXNativeTarget "KLRefreshDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +486,7 @@
 				8BC53E47188930C80036452F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
