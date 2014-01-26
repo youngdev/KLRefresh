@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface KLRefreshFooter : UIView
+{
+    UIImageView *bgImg;
+}
 @property (nonatomic , strong) UILabel *titleLabel;
 @property (nonatomic , strong) UILabel *detailLabel;
 @property (nonatomic , strong) UIImageView *arrowImageView;
+- (void)setBackgroundImage:(UIImage *)img;
 @end

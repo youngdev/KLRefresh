@@ -27,16 +27,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    testTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    
+    // 适配 iOS7
+    CGRect currentViewRect = self.view.bounds;
+    int currentDeviceSystemVer = [[UIDevice currentDevice].systemVersion intValue];
+    if(currentDeviceSystemVer>=7)
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        currentViewRect.size.height-=[UIApplication sharedApplication].statusBarFrame.size.height;
+    }
+    if(!self.navigationController.navigationBar.hidden)
+        currentViewRect.size.height-=44;
+    testTableView = [[UITableView alloc]initWithFrame:currentViewRect style:UITableViewStylePlain];
     [testTableView setDelegate:self];
     [testTableView setDataSource:self];
     [self.view addSubview:testTableView];
     
 
+    
+    // --- --- --- --- refresh --- --- --- --- ---
     refresh = [KLRefresh refreshWithScrollView:testTableView];      // init Refresh and set scrollview
+    
     [refresh setIsEnableHeader:YES];        //enable header
+    [refresh setHeaderArrowImage:[UIImage imageNamed:@"arrow2"]];        // set header Arrow image
+    [refresh setHeaderBackgroundImage:[UIImage imageNamed:@"256"]];
+    
     [refresh setIsEnableFooter:YES];        //enable footer
+    [refresh setFooterArrowImage:[UIImage imageNamed:@"arrow2"]];        // set footer Arrow image
+    [refresh setFooterBackgroundImage:[UIImage imageNamed:@"256"]];
+    
     [refresh setDelegate:self];     //delegate
+    // --- --- --- --- refresh --- --- --- --- ---
 }
 
 - (void)didReceiveMemoryWarning

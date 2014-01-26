@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B554AE21894B0D100FE49D9 /* 256@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B554AE11894B0D100FE49D9 /* 256@2x.png */; };
+		8B94AF3B18926B940004C798 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B94AF3A18926B940004C798 /* arrow@2x.png */; };
+		8B94AF3D18926F530004C798 /* arrow2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B94AF3C18926F530004C798 /* arrow2@2x.png */; };
 		8BAC4BF2188CD06400F126B6 /* KLRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC4BED188CD06400F126B6 /* KLRefresh.m */; };
 		8BAC4BF3188CD06400F126B6 /* KLRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC4BEF188CD06400F126B6 /* KLRefreshFooter.m */; };
 		8BAC4BF4188CD06400F126B6 /* KLRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAC4BF1188CD06400F126B6 /* KLRefreshHeader.m */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B554AE11894B0D100FE49D9 /* 256@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "256@2x.png"; sourceTree = "<group>"; };
+		8B94AF3A18926B940004C798 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		8B94AF3C18926F530004C798 /* arrow2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow2@2x.png"; sourceTree = "<group>"; };
 		8BAC4BEC188CD06400F126B6 /* KLRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefresh.h; sourceTree = "<group>"; };
 		8BAC4BED188CD06400F126B6 /* KLRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLRefresh.m; sourceTree = "<group>"; };
 		8BAC4BEE188CD06400F126B6 /* KLRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLRefreshFooter.h; sourceTree = "<group>"; };
@@ -86,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B94AF3918926B310004C798 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				8B554AE11894B0D100FE49D9 /* 256@2x.png */,
+				8B94AF3C18926F530004C798 /* arrow2@2x.png */,
+				8B94AF3A18926B940004C798 /* arrow@2x.png */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
 		8BAC4BEB188CD06400F126B6 /* KLRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,7 @@
 		8BC53E1F188930C80036452F /* KLRefreshDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8B94AF3918926B310004C798 /* assets */,
 				8BAC4BEB188CD06400F126B6 /* KLRefresh */,
 				8BC53E4F188930E00036452F /* KLRefreshViewController.h */,
 				8BC53E50188930E00036452F /* KLRefreshViewController.m */,
@@ -249,8 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B94AF3B18926B940004C798 /* arrow@2x.png in Resources */,
 				8BC53E24188930C80036452F /* InfoPlist.strings in Resources */,
 				8BC53E2C188930C80036452F /* Images.xcassets in Resources */,
+				8B554AE21894B0D100FE49D9 /* 256@2x.png in Resources */,
+				8B94AF3D18926F530004C798 /* arrow2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

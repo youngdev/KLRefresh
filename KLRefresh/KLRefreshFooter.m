@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self setBackgroundColor:[UIColor redColor]];
+        [self setBackgroundColor:[UIColor brownColor]];
         _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 20)];
         [_titleLabel setFont:[UIFont systemFontOfSize:12.f]];
         [_titleLabel setBackgroundColor:[UIColor clearColor]];
@@ -25,17 +25,28 @@
     }
     return self;
 }
+- (void)setBackgroundImage:(UIImage *)img
+{
+    if(!bgImg)
+        bgImg = [[UIImageView alloc]initWithImage:img];
+    else
+        [bgImg setImage:img];
+    [self addSubview:bgImg];
+    [self sendSubviewToBack:bgImg];
+}
 - (void)drawRect:(CGRect)rect
 {
+    [bgImg setFrame:rect];
     float centerY = rect.size.height/2;
     [_titleLabel sizeToFit];
     [_detailLabel sizeToFit];
     [_titleLabel setCenter:CGPointMake(self.center.x, centerY)];
     [_detailLabel setCenter:CGPointMake(self.center.x, centerY+10)];
-    [_arrowImageView setCenter:CGPointMake(self.center.x, centerY+20)];
+    [_arrowImageView setCenter:CGPointMake(self.center.x-50, centerY)];
+    _arrowImageView.transform = CGAffineTransformMakeRotation(M_PI);
     [self addSubview:_titleLabel];
     [self addSubview:_detailLabel];
-    
+    [self addSubview:_arrowImageView];
 }
 
 @end

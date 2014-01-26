@@ -42,7 +42,24 @@ static KLRefresh *instance;
     [header.titleLabel setText:kRefreshHeaderStatusA];
     [_scroller addSubview:header];
 }
-
+- (void)setHeaderArrowImage:(UIImage *)headerArrowImage
+{
+    if(header)
+    {
+        [header.arrowImageView setImage:headerArrowImage];
+        [header.arrowImageView setBounds:CGRectMake(0, 0, headerArrowImage.size.width, headerArrowImage.size.height)];
+    }
+}
+- (void)setHeaderBackgroundImage:(UIImage *)headerBackgroundImage
+{
+    _headerBackgroundImage = headerBackgroundImage;
+    [header setBackgroundImage:headerBackgroundImage];
+}
+- (void)setFooterBackgroundImage:(UIImage *)footerBackgroundImage
+{
+    _footerBackgroundImage = footerBackgroundImage;
+    [footer setBackgroundImage:footerBackgroundImage];
+}
 - (void)setIsEnableFooter:(BOOL)isEnableFooter
 {
     _isEnableFooter = isEnableFooter;
@@ -50,7 +67,14 @@ static KLRefresh *instance;
     [footer.titleLabel setText:kRefreshFooterStatusA];
     [_scroller addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
-
+- (void)setFooterArrowImage:(UIImage *)footerArrowImage
+{
+    if(footer)
+    {
+        [footer.arrowImageView setImage:footerArrowImage];
+        [footer.arrowImageView setBounds:CGRectMake(0, 0, footerArrowImage.size.width, footerArrowImage.size.height)];
+    }
+}
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if(![_scroller.subviews containsObject:_scroller] && _scroller.contentSize.height>_scroller.bounds.size.height)
@@ -61,6 +85,8 @@ static KLRefresh *instance;
 - (void)endRefresh
 {
     [self changeStatus:RefreshStatusNormal];
+    [self replaceArrowImage:header.arrowImageView withLoadingInView:header];
+    [self replaceArrowImage:footer.arrowImageView withLoadingInView:footer];
     [UIView animateWithDuration:.2f animations:^{
         [_scroller setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
     }];
@@ -71,7 +97,37 @@ static KLRefresh *instance;
 {
     refreshStatus = newRefreshStatus;
 }
-
+- (void)transformArrowImg:(UIImageView *)imgView
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        imgView.transform = CGAffineTransformMakeRotation(M_PI);
+    }];
+}
+- (void)transformArrowImg2:(UIImageView *)imgView
+{
+    [UIView animateWithDuration:0.2f animations:^{
+        imgView.transform = CGAffineTransformMakeRotation(0);
+    }];
+}
+- (void)replaceArrowImage:(UIImageView *)imgView withLoadingInView:(UIView *)view
+{
+    if(!activity)
+    {
+        activity = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+        activity.frame =imgView.frame;
+        [activity startAnimating];
+    }
+    if(refreshStatus == RefreshStatusDidRelease)
+    {
+        [imgView setAlpha:0.f];
+        [view addSubview:activity];
+    }
+    else
+    {
+        [imgView setAlpha:1.f];
+        [activity removeFromSuperview];
+    }
+}
 #pragma mark- UIScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -85,26 +141,29 @@ static KLRefresh *instance;
         if(height>=footHeight && refreshStatus == RefreshStatusDidDragging)
         {
             [self changeStatus:RefreshStatusWillRelease];
+            [self transformArrowImg2:footer.arrowImageView];
             [footer.titleLabel setText:kRefreshFooterStatusB];
         }
         else if(height<footHeight && height>contentHeight)
         {
             [self changeStatus:RefreshStatusDidDragging];
+            [self transformArrowImg:footer.arrowImageView];
             [footer.titleLabel setText:kRefreshFooterStatusA];
         }
     }
-
     if (height<0 && _isEnableHeader)
     {
         height = abs(height);
         if(height>=kRefreshHeaderDistance && refreshStatus == RefreshStatusDidDragging)
         {
             [self changeStatus:RefreshStatusWillRelease];
+            [self transformArrowImg:header.arrowImageView];
             [header.titleLabel setText:kRefreshHeaderStatusB];
         }
         else if(height<kRefreshHeaderDistance)
         {
             [self changeStatus:RefreshStatusDidDragging];
+            [self transformArrowImg2:header.arrowImageView];
             [header.titleLabel setText:kRefreshHeaderStatusA];
         }
     }
@@ -117,6 +176,8 @@ static KLRefresh *instance;
     if(refreshStatus == RefreshStatusWillRelease && scrollView.contentOffset.y<0)
     {
         [self changeStatus:RefreshStatusDidRelease];
+        [self replaceArrowImage:header.arrowImageView withLoadingInView:header];
+        [self transformArrowImg2:header.arrowImageView];
         [header.titleLabel setText:kRefreshHeaderStatusC];
         [UIView animateWithDuration:.2f animations:^{
             [scrollView setContentInset:UIEdgeInsetsMake(kRefreshHeaderDistance, 0, 0, 0)];
@@ -130,6 +191,8 @@ static KLRefresh *instance;
     else if(refreshStatus == RefreshStatusWillRelease && scrollView.contentOffset.y>0)
     {
         [self changeStatus:RefreshStatusDidRelease];
+        [self replaceArrowImage:footer.arrowImageView withLoadingInView:footer];
+        [self transformArrowImg:footer.arrowImageView];
         [footer.titleLabel setText:kRefreshHeaderStatusC];
         [UIView animateWithDuration:.2f animations:^{
             [scrollView setContentInset:UIEdgeInsetsMake(0, 0, kRefreshFooterDistance, 0)];

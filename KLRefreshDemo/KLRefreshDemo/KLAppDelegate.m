@@ -16,8 +16,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    _rootViewController = [[KLRefreshViewController alloc]init];
-    [self.window addSubview:_rootViewController.view];
+//    _rootViewController = [[KLRefreshViewController alloc]init];
+//    [self.window addSubview:_rootViewController.view];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[KLRefreshViewController alloc]init]];
     return YES;
 }
 

@@ -24,8 +24,7 @@ typedef enum{
     RefreshStatusNormal,
     RefreshStatusDidDragging,
     RefreshStatusWillRelease,
-    RefreshStatusDidRelease,
-    RefreshStatusDidLoading
+    RefreshStatusDidRelease
 }RefreshStatus;
 
 @class KLRefresh;
@@ -40,6 +39,7 @@ typedef enum{
     KLRefreshHeader *header;
     KLRefreshFooter *footer;
     RefreshStatus refreshStatus;
+    UIActivityIndicatorView *activity;
     BOOL valid;
 }
 @property (nonatomic , assign) id <KLRefreshDelegate> delegate;
