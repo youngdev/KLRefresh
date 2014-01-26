@@ -1,10 +1,20 @@
-KLRefresh
+Introduction
 =========
 
 This is simple Pull & Push refresh
 	by Glen
 
-	使用方法
+History
+==============================
+	ver1.0
+	*感谢 Jack 指出存在的bug,已修复
+	*增加了arrow设置 和 背景图设置。
+
+
+
+
+How to use
+==============================
 	1) 复制 KLRefresh 文件夹到工程目录
 	2) 使用 [KLRefresh refreshWithScrollView:<#UIScrollView#>] 进行初始化
 	3) 如果你要使用 刷新功能 , 你需要设置 [isEnableHeader:Yes];
@@ -18,3 +28,4 @@ This is simple Pull & Push refresh
 
 	说明
 	  如果你的ScrollView 不满足滚动条件。那么你将无法使用Footer
+	  
